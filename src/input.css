@@ -10,9 +10,9 @@
   }
 
   h1 {
-    font-size: 3rem;
     font-weight: 500;
     line-height: 3rem;
+    @apply text-3xl md:text-5xl;
   }
   h2 {
     font-size: 2.5rem;
@@ -28,6 +28,9 @@
   header,
   footer {
     @apply py-9 px-6 lg:py-16 lg:px-40;
+  }
+  section {
+    @apply py-10 px-6 lg:pt-16 lg:px-40;
   }
 
   .description {
@@ -68,13 +71,104 @@
   }
 
   #nav-open-bg {
-    @apply fixed inset-0 pointer-events-none z-40;
+    @apply fixed inset-0 pointer-events-none z-40 opacity-75;
   }
   #nav-open-bg.open {
-    @apply bg-Black-Opacity;
+    @apply bg-black;
   }
 
   nav ul li a:hover {
     @apply underline;
+  }
+  a.button {
+    letter-spacing: 1px;
+    @apply bg-white text-black p-4 rounded-lg font-medium inline-block;
+  }
+  .home-projects {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    @apply flex flex-col justify-center items-center uppercase text-white py-20 rounded-xl;
+  }
+  .home-projects:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+    @apply rounded-xl;
+  }
+  .home-projects:nth-child(1) {
+    background-image: url(./assets/home/mobile/image-web-design.jpg);
+  }
+  .home-projects:nth-child(2) {
+    background-image: url(./assets/home/mobile/image-app-design.jpg);
+  }
+  .home-projects:nth-child(3) {
+    background-image: url(./assets/home/mobile/image-graphic-design.jpg);
+  }
+
+  @media (min-width: 768px) {
+    .home-projects:nth-child(1) {
+      background-image: url(./assets/home/tablet/web-design.jpg);
+    }
+    .home-projects:nth-child(2) {
+      background-image: url(./assets/home/tablet/app-design.jpg);
+    }
+    .home-projects:nth-child(3) {
+      background-image: url(./assets/home/tablet/graphic-design.jpg);
+    }
+  }
+
+  .home-projects h3 {
+    letter-spacing: 1.4px;
+    line-height: 36px;
+    position: relative;
+    z-index: 1;
+  }
+  .home-projects a {
+    position: relative;
+    font-size: 15px;
+    letter-spacing: 5px;
+  }
+  .home-projects a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+    width: 20px;
+    aspect-ratio: 1/1;
+    background: transparent url(./assets/shared/desktop/icon-right-arrow.svg)
+      no-repeat center center;
+  }
+  .illustrations figure {
+    width: 202px;
+    height: 202px;
+    @apply relative mx-auto;
+  }
+  .illustrations figure img {
+    @apply absolute inset-0;
+  }
+  .illustrations h3 {
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 26px;
+    text-transform: uppercase;
+  }
+  .get-in-touch {
+    @apply bg-Peach rounded-lg p-12 text-center relative;
+  }
+  .get-in-touch::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent
+      url(./assets/shared/desktop/bg-pattern-call-to-action.svg) no-repeat
+      center center;
+  }
+  .get-in-touch h2 {
+    font-size: 32px;
+    line-height: 36px;
   }
 }
