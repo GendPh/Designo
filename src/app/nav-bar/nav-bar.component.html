@@ -1,0 +1,27 @@
+<header class="relative z-[10000] bg-White flex items-center justify-between gap-5">
+  <figure class="w-52">
+    <img src="../../assets/shared/desktop/logo-dark.png" alt="Designo Logo">
+  </figure>
+  <button type="button" id="nav-button" class="close" (click)="NavButtonClick()">
+  </button>
+
+
+  <nav class="hidden">
+    <ul class="uppercase flex justify-start gap-8">
+      <li><a href="#">our company</a></li>
+      <li><a href="#">locations</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<div id="nav-open-bg"></div>
+
+<nav id="mobile-nav-bar" class="close md:hidden">
+  <ul class="uppercase flex flex-col justify-start gap-8">
+    <li><a href="#">our company</a></li>
+    <li><a href="#">locations</a></li>
+    <li><a href="#">contact</a></li>
+  </ul>
+</nav>

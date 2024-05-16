@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* npx tailwindcss -i ./src/input.css -o ./src/styles.css --watch */
 
 /* ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com */
@@ -446,7 +448,37 @@ video {
   display: none;
 }
 
-*, ::before, ::after {
+* {
+  font-family: "Jost", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  letter-spacing: 5px;
+}
+
+header,
+  main{
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+*, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -500,7 +532,7 @@ video {
   --tw-contain-style:  ;
 }
 
-::backdrop {
+::backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -554,46 +586,137 @@ video {
   --tw-contain-style:  ;
 }
 
-.relative {
+#mobile-nav-bar {
+  z-index: 0;
+  padding: 2.2rem 1.5rem;
+  transform-origin: top;
+  position: fixed;
+  width: 100%;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 28 30 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 100ms;
+}
+
+#mobile-nav-bar.close{
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#mobile-nav-bar li a {
+  font-size: 1.5rem;
+  line-height: 1.563rem;
+  letter-spacing: 2px;
+}
+
+#nav-button {
+  width: 24px;
+  height: 20px;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.3s;
+}
+
+#nav-button.close {
+  background-image: url(./assets/shared/mobile/icon-hamburger.svg);
+}
+
+#nav-button.open {
+  background-image: url(./assets/shared/mobile/icon-close.svg);
+}
+
+#nav-open-bg{
+  pointer-events: none;
+  position: fixed;
+  inset: 0px;
+}
+
+#nav-open-bg.open{
+  --tw-bg-opacity: 1;
+  background-color: rgb(151 151 151 / var(--tw-bg-opacity));
+}
+
+.pointer-events-none{
+  pointer-events: none;
+}
+
+.pointer-events-auto{
+  pointer-events: auto;
+}
+
+.relative{
   position: relative;
 }
 
-.flex {
+.sticky{
+  position: sticky;
+}
+
+.top-0{
+  top: 0px;
+}
+
+.z-\[10000\]{
+  z-index: 10000;
+}
+
+.flex{
   display: flex;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+.hidden{
+  display: none;
 }
 
-.border {
-  border-width: 1px;
+.w-52{
+  width: 13rem;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+.flex-col{
+  flex-direction: column;
 }
 
-.bg-white {
+.items-center{
+  align-items: center;
+}
+
+.justify-start{
+  justify-content: flex-start;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.gap-5{
+  gap: 1.25rem;
+}
+
+.gap-8{
+  gap: 2rem;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.bg-White{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.uppercase{
+  text-transform: uppercase;
 }
 
-.grayscale {
-  --tw-grayscale: grayscale(100%);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+@media (min-width: 768px){
+  .md\:hidden{
+    display: none;
+  }
 }
