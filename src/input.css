@@ -26,8 +26,8 @@
   }
 
   header,
-  main {
-    @apply py-9 px-6;
+  footer {
+    @apply py-9 px-6 lg:py-16 lg:px-40;
   }
 
   .description {
@@ -38,10 +38,9 @@
 
 @layer components {
   #mobile-nav-bar {
-    z-index: 0;
     padding: 2.2rem 1.5rem;
     transform-origin: top;
-    @apply bg-Black text-white w-full fixed scale-y-100 transition-all duration-100;
+    @apply bg-Black text-white w-full fixed scale-y-100 transition-all duration-100 z-40;
   }
 
   #mobile-nav-bar.close {
@@ -69,9 +68,13 @@
   }
 
   #nav-open-bg {
-    @apply fixed inset-0 pointer-events-none;
+    @apply fixed inset-0 pointer-events-none z-40;
   }
   #nav-open-bg.open {
     @apply bg-Black-Opacity;
+  }
+
+  nav ul li a:hover {
+    @apply underline;
   }
 }
