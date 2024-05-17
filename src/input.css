@@ -30,7 +30,11 @@
     @apply py-9 px-6 lg:py-16 lg:px-40;
   }
   section {
-    @apply py-10 px-6 lg:pt-16 lg:px-40;
+    @apply py-10 px-6 lg:pt-16 lg:px-44;
+  }
+
+  footer {
+    @apply z-20 relative;
   }
 
   .description {
@@ -88,7 +92,7 @@
     position: relative;
     background-size: cover;
     background-position: center;
-    @apply flex flex-col justify-center items-center uppercase text-white py-20 rounded-xl;
+    @apply flex flex-col justify-center items-center uppercase text-white py-20 lg:py-28 rounded-xl;
   }
   .home-projects:before {
     content: "";
@@ -96,8 +100,12 @@
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 0;
-    @apply rounded-xl;
+    @apply rounded-xl transition-colors duration-150;
   }
+  .home-projects:hover:before {
+    @apply bg-Peach bg-opacity-60;
+  }
+
   .home-projects:nth-child(1) {
     background-image: url(./assets/home/mobile/image-web-design.jpg);
   }
@@ -117,6 +125,17 @@
     }
     .home-projects:nth-child(3) {
       background-image: url(./assets/home/tablet/graphic-design.jpg);
+    }
+  }
+  @media (min-width: 1024px) {
+    .home-projects:nth-child(1) {
+      background-image: url(./assets/home/desktop/image-web.jpg);
+    }
+    .home-projects:nth-child(2) {
+      background-image: url(./assets/home/desktop/image-app.jpg);
+    }
+    .home-projects:nth-child(3) {
+      background-image: url(./assets/home/desktop/image-graphic.jpg);
     }
   }
 
@@ -142,9 +161,12 @@
     background: transparent url(./assets/shared/desktop/icon-right-arrow.svg)
       no-repeat center center;
   }
+  .illustrations {
+    @apply flex flex-col gap-8 md:flex-row lg:flex-col text-center md:text-start lg:text-center;
+  }
   .illustrations figure {
-    width: 202px;
-    height: 202px;
+    min-width: 202px;
+    aspect-ratio: 1/1;
     @apply relative mx-auto;
   }
   .illustrations figure img {
@@ -157,7 +179,7 @@
     text-transform: uppercase;
   }
   .get-in-touch {
-    @apply bg-Peach rounded-lg p-12 text-center relative;
+    @apply bg-Peach rounded-lg p-12 md:py-20 lg:py-12 text-center lg:text-start md:text-balance relative flex flex-col justify-center items-center lg:flex-row lg:justify-between;
   }
   .get-in-touch::before {
     content: "";
@@ -168,7 +190,6 @@
       center center;
   }
   .get-in-touch h2 {
-    font-size: 32px;
-    line-height: 36px;
+    @apply font-medium text-[32px] lg:text-[40px] leading-[36px] lg:leading-[40px];
   }
 }
