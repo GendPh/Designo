@@ -454,14 +454,13 @@ video {
 
 h1 {
   font-weight: 500;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 30px;
+  line-height: 3rem;
 }
 
-@media (min-width: 768px){
-  h1{
-    font-size: 3rem;
-    line-height: 1;
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 40px;
   }
 }
 
@@ -495,17 +494,21 @@ header,
   }
 }
 
-section{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+section {
+  /* @apply py-10 px-6 lg:pt-16 lg:px-44; */
+  max-width: 1024px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 @media (min-width: 1024px){
   section{
-    padding-left: 11rem;
-    padding-right: 11rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-top: 4rem;
   }
 }
@@ -686,6 +689,11 @@ footer{
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+nav ul li a {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
 nav ul li a:hover{
   text-decoration-line: underline;
 }
@@ -693,6 +701,7 @@ nav ul li a:hover{
 a.button {
   letter-spacing: 1px;
   display: inline-block;
+  cursor: pointer;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -700,6 +709,16 @@ a.button {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+a.button:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 173 155 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .home-projects {
@@ -974,11 +993,6 @@ a.button {
   margin-right: auto;
 }
 
-.my-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .my-6{
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -997,8 +1011,8 @@ a.button {
   margin-bottom: 250px;
 }
 
-.mt-10{
-  margin-top: 2.5rem;
+.mt-8{
+  margin-top: 2rem;
 }
 
 .inline-block{
@@ -1031,6 +1045,18 @@ a.button {
 
 .w-full{
   width: 100%;
+}
+
+.max-w-full{
+  max-width: 100%;
+}
+
+.max-w-lg{
+  max-width: 32rem;
+}
+
+.max-w-screen-lg{
+  max-width: 1024px;
 }
 
 .max-w-screen-sm{
@@ -1074,6 +1100,10 @@ a.button {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.gap-10{
+  gap: 2.5rem;
 }
 
 .gap-11{
@@ -1201,8 +1231,28 @@ a.button {
     display: block;
   }
 
+  .md\:inline-block{
+    display: inline-block;
+  }
+
   .md\:hidden{
     display: none;
+  }
+
+  .md\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:items-end{
+    align-items: flex-end;
+  }
+
+  .md\:justify-between{
+    justify-content: space-between;
   }
 
   .md\:rounded-xl{
@@ -1216,21 +1266,38 @@ a.button {
 }
 
 @media (min-width: 1024px){
-  .lg\:static{
-    position: static;
+  .lg\:-right-20{
+    right: -5rem;
+  }
+
+  .lg\:bottom-\[-240px\]{
+    bottom: -240px;
+  }
+
+  .lg\:left-auto{
+    left: auto;
+  }
+
+  .lg\:right-0{
+    right: 0px;
+  }
+
+  .lg\:top-0{
+    top: 0px;
   }
 
   .lg\:row-span-2{
     grid-row: span 2 / span 2;
   }
 
-  .lg\:m-0{
-    margin: 0px;
+  .lg\:mx-0{
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
-  .lg\:mx-44{
-    margin-left: 11rem;
-    margin-right: 11rem;
+  .lg\:mx-auto{
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .lg\:mb-0{
@@ -1239,10 +1306,6 @@ a.button {
 
   .lg\:block{
     display: block;
-  }
-
-  .lg\:w-36{
-    width: 9rem;
   }
 
   .lg\:max-w-\[400px\]{
@@ -1262,12 +1325,17 @@ a.button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .lg\:flex-row{
-    flex-direction: row;
+  .lg\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
-  .lg\:px-44{
-    padding-left: 11rem;
-    padding-right: 11rem;
+  .lg\:py-40{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .lg\:text-start{
+    text-align: start;
   }
 }
