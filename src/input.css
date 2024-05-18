@@ -9,20 +9,12 @@
     font-family: "Jost", sans-serif;
   }
 
-  h1 {
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 3rem;
-  }
-  @media (min-width: 1024px) {
-    h1 {
-      font-size: 40px;
-    }
-  }
+  h1,
   h2 {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    letter-spacing: 2px;
+    @apply text-center text-[32px] md:text-[40px] leading-[36px] md:leading-[48px] font-medium uppercase;
+  }
+  p.hero-description {
+    @apply text-center text-[15px] md:text-[16px] leading-[25px] md:leading-[26px] md:max-w-[55%] mx-auto;
   }
   h3 {
     font-size: 1.25rem;
@@ -225,6 +217,44 @@
   @media (min-width: 768px) {
     .hero {
       background-position: right -150px top -150px;
+    }
+  }
+
+  .about-us-hero {
+    @apply p-0 text-white;
+    & img {
+      @apply w-full;
+    }
+    & article {
+      @apply py-20 px-6;
+      &.about {
+        background-repeat: no-repeat;
+        background-position: right top -150px;
+        @apply bg-Peach bg-[url(./assets/about/mobile/bg-pattern-hero-about.svg)];
+      }
+      &.talent {
+        @apply bg-[#FDF3F0] relative overflow-hidden;
+        & h2 {
+          @apply text-Peach;
+        }
+        & p {
+          @apply text-Black;
+        }
+        & img {
+          position: absolute;
+          opacity: 40%;
+          &:first-of-type {
+            top: 0;
+            left: 0;
+            width: 60%;
+          }
+          &:last-of-type {
+            top: 90%;
+            scale: 1.6;
+            right: 0;
+          }
+        }
+      }
     }
   }
 }

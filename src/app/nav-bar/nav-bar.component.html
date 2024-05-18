@@ -1,6 +1,6 @@
 <header
   class=" z-[10000] sticky top-0 bg-White flex items-center justify-between gap-5 max-w-screen-lg mx-auto lg:px-0">
-  <figure routerLink="/" class="w-52 cursor-pointer">
+  <figure (click)="CloseNavBar()" routerLink="/" class="w-52 cursor-pointer">
     <img src="../../assets/shared/desktop/logo-dark.png" alt="Designo Logo">
   </figure>
 
@@ -21,8 +21,8 @@
 
 <nav id="mobile-nav-bar" class="close md:hidden">
   <ul class="uppercase flex flex-col justify-start gap-8">
-    <li><a href="#">our company</a></li>
-    <li><a href="#">locations</a></li>
-    <li><a href="#">contact</a></li>
+    <li><a (click)="CloseNavBar()" routerLink="/about-us">our company</a></li>
+    <li><a (click)="CloseNavBar()" href="#">locations</a></li>
+    <li><a (click)="CloseNavBar()" href="#">contact</a></li>
   </ul>
 </nav>

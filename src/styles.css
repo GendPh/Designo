@@ -452,22 +452,37 @@ video {
   font-family: "Jost", sans-serif;
 }
 
-h1 {
+h1,
+  h2{
+  text-align: center;
+  font-size: 32px;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 3rem;
+  text-transform: uppercase;
+  line-height: 36px;
 }
 
-@media (min-width: 1024px) {
-  h1 {
+@media (min-width: 768px){
+  h1,
+  h2{
     font-size: 40px;
+    line-height: 48px;
   }
 }
 
-h2 {
-  font-size: 2.5rem;
-  line-height: 3rem;
-  letter-spacing: 2px;
+p.hero-description{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@media (min-width: 768px){
+  p.hero-description{
+    max-width: 55%;
+    font-size: 16px;
+    line-height: 26px;
+  }
 }
 
 h3 {
@@ -1291,6 +1306,70 @@ a.button:hover{
   }
 }
 
+.about-us-hero{
+  padding: 0px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  & img{
+    width: 100%;
+  }
+  & article{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  & article{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  & article {
+    &.about {
+      background-repeat: no-repeat;
+      background-position: right top -150px;
+    }
+    &.about{
+      --tw-bg-opacity: 1;
+      background-color: rgb(231 129 107 / var(--tw-bg-opacity));
+    }
+    &.about{
+      background-image: url(./assets/about/mobile/bg-pattern-hero-about.svg);
+    }
+    &.talent{
+      position: relative;
+    }
+    &.talent{
+      overflow: hidden;
+    }
+    &.talent{
+      --tw-bg-opacity: 1;
+      background-color: rgb(253 243 240 / var(--tw-bg-opacity));
+    }
+    &.talent {
+      & h2{
+        --tw-text-opacity: 1;
+        color: rgb(231 129 107 / var(--tw-text-opacity));
+      }
+      & p{
+        --tw-text-opacity: 1;
+        color: rgb(29 28 30 / var(--tw-text-opacity));
+      }
+      & img {
+        position: absolute;
+        opacity: 40%;
+        &:first-of-type {
+          top: 0;
+          left: 0;
+          width: 60%;
+        }
+        &:last-of-type {
+          top: 90%;
+          scale: 1.6;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
 .pointer-events-none{
   pointer-events: none;
 }
@@ -1376,6 +1455,10 @@ a.button:hover{
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.mb-6{
+  margin-bottom: 1.5rem;
 }
 
 .mb-8{

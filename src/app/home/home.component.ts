@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, } from '@angular/core';
 import { GetInTouchComponent } from '../get-in-touch/get-in-touch.component';
 import { RouterLink } from '@angular/router';
 import { routeAnimationTrigger } from '../shared/triggerAnimations';
