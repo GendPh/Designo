@@ -1,0 +1,18 @@
+<section>
+  <div class="projects-destinations">
+    <article routerLink="/web-design" class="web" [ngClass]="{'row-span-2':hidden=='none'}" *ngIf="hidden!='web'">
+      <h2>web design</h2>
+      <a>view projects <span></span></a>
+    </article>
+
+    <article routerLink="/app-design" class="app" *ngIf="hidden!='app'">
+      <h2>app design</h2>
+      <a>view projects <span></span></a>
+    </article>
+
+    <article routerLink="/graphic-design" class="graphic" *ngIf="hidden!='graphic'">
+      <h2>graphic design</h2>
+      <a>view projects <span></span></a>
+    </article>
+  </div>
+</section>

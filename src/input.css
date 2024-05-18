@@ -54,16 +54,14 @@
     padding: 2.2rem 1.5rem;
     transform-origin: top;
     @apply bg-Black text-white w-full fixed scale-y-100 transition-all duration-100 z-40;
-  }
-
-  #mobile-nav-bar.close {
-    @apply scale-y-0;
-  }
-
-  #mobile-nav-bar li a {
-    font-size: 1.5rem;
-    line-height: 1.563rem;
-    letter-spacing: 2px;
+    &.close {
+      @apply scale-y-0;
+    }
+    & li a {
+      font-size: 1.5rem;
+      line-height: 1.563rem;
+      letter-spacing: 2px;
+    }
   }
   #nav-button {
     width: 24px;
@@ -72,134 +70,161 @@
     background-repeat: no-repeat;
     background-position: center;
     transition: background-image 0.3s;
-  }
-  #nav-button.close {
-    background-image: url(./assets/shared/mobile/icon-hamburger.svg);
-  }
-  #nav-button.open {
-    background-image: url(./assets/shared/mobile/icon-close.svg);
+    &.close {
+      background-image: url(./assets/shared/mobile/icon-hamburger.svg);
+    }
+    &.open {
+      background-image: url(./assets/shared/mobile/icon-close.svg);
+    }
   }
 
   #nav-open-bg {
     @apply fixed inset-0 pointer-events-none z-40 opacity-75;
-  }
-  #nav-open-bg.open {
-    @apply bg-black;
+    &.open {
+      @apply bg-black;
+    }
   }
 
   nav ul li a {
     font-size: 14px;
     letter-spacing: 2px;
-  }
-  nav ul li a:hover {
-    @apply underline;
+    &:hover {
+      @apply underline;
+    }
   }
   a.button {
     letter-spacing: 1px;
     @apply bg-white text-black p-4 rounded-lg font-medium inline-block hover:bg-Light-Peach hover:text-white transition-colors duration-150 cursor-pointer;
   }
-  .home-projects {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    @apply flex flex-col justify-center items-center uppercase text-white py-20 lg:py-28 rounded-xl;
-  }
-  .home-projects:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 0;
-    @apply rounded-xl transition-colors duration-150;
-  }
-  .home-projects:hover:before {
-    @apply bg-Peach bg-opacity-60;
-  }
 
-  .home-projects:nth-child(1) {
-    background-image: url(./assets/home/mobile/image-web-design.jpg);
-  }
-  .home-projects:nth-child(2) {
-    background-image: url(./assets/home/mobile/image-app-design.jpg);
-  }
-  .home-projects:nth-child(3) {
-    background-image: url(./assets/home/mobile/image-graphic-design.jpg);
-  }
+  .hero {
+    background-image: url(./assets/web-design/desktop/bg-pattern-intro-web.svg);
+    background-position: right -20px top -10px;
+    background-repeat: no-repeat;
 
-  @media (min-width: 768px) {
-    .home-projects:nth-child(1) {
-      background-image: url(./assets/home/tablet/web-design.jpg);
+    @apply bg-Peach text-white text-center py-24 md:mx-8 md:rounded-xl lg:mx-auto;
+    & h1 {
+      @apply text-[32px] md:text-[48px] leading-[36px] md:leading-[48px] font-medium mb-6;
     }
-    .home-projects:nth-child(2) {
-      background-image: url(./assets/home/tablet/app-design.jpg);
-    }
-    .home-projects:nth-child(3) {
-      background-image: url(./assets/home/tablet/graphic-design.jpg);
-    }
-  }
-  @media (min-width: 1024px) {
-    .home-projects:nth-child(1) {
-      background-image: url(./assets/home/desktop/image-web.jpg);
-    }
-    .home-projects:nth-child(2) {
-      background-image: url(./assets/home/desktop/image-app.jpg);
-    }
-    .home-projects:nth-child(3) {
-      background-image: url(./assets/home/desktop/image-graphic.jpg);
+    & p {
+      @apply text-[15px] md:text-[16px] leading-[25px] md:leading-[26px] md:max-w-[55%] mx-auto;
     }
   }
 
-  .home-projects h3 {
-    letter-spacing: 1.4px;
-    line-height: 36px;
-    position: relative;
-    z-index: 1;
+  .projects-destinations {
+    @apply grid gap-6 lg:grid-cols-2;
+
+    & article {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @apply relative flex flex-col gap-3 justify-center items-center py-[90px] rounded-xl text-White cursor-pointer;
+
+      &.web {
+        @apply bg-[url(./assets/home/mobile/image-web-design.jpg)]
+         md:bg-[url(./assets/home/tablet/web-design.jpg)]
+         lg:bg-[url(./assets/home/desktop/image-web.jpg)];
+      }
+      &.app {
+        @apply bg-[url(./assets/home/mobile/image-app-design.jpg)]
+         md:bg-[url(./assets/home/tablet/app-design.jpg)]
+         lg:bg-[url(./assets/home/desktop/image-app.jpg)];
+      }
+      &.graphic {
+        @apply bg-[url(./assets/home/mobile/image-graphic-design.jpg)]
+        md:bg-[url(./assets/home/tablet/graphic-design.jpg)]
+         lg:bg-[url(./assets/home/desktop/image-graphic.jpg)];
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        @apply rounded-xl transition-colors duration-300;
+      }
+
+      &:hover::after {
+        @apply bg-Peach bg-opacity-60;
+      }
+
+      & h2 {
+        @apply relative z-10 text-[28px] md:text-[40px] leading-[36px] md:leading-[48px] tracking-[1.4px] md:tracking-[2px] font-medium uppercase;
+      }
+      & a {
+        @apply cursor-pointer relative z-10 text-[15px] leading-normal tracking-[5px] uppercase flex justify-between items-center gap-4;
+        & span {
+          background: transparent
+            url(./assets/shared/desktop/icon-right-arrow.svg) no-repeat center
+            center;
+          @apply relative z-10 inline-block w-4 aspect-square;
+        }
+      }
+    }
   }
-  .home-projects a {
-    position: relative;
-    font-size: 15px;
-    letter-spacing: 5px;
+
+  .projects {
+    @apply pt-24 grid gap-10 lg:grid-cols-3;
+    & article {
+      @apply grid md:grid-cols-2 lg:grid-cols-1;
+      & img {
+        @apply rounded-t-xl md:rounded-t-none md:rounded-l-xl lg:rounded-l-none lg:rounded-t-xl w-full h-full;
+      }
+      & div {
+        @apply bg-[#FDF3F0] text-center p-8 flex flex-col justify-center items-center rounded-b-xl md:rounded-b-none md:rounded-r-xl lg:rounded-r-none lg:rounded-b-xl transition-colors duration-300;
+        & h3 {
+          @apply text-Peach text-[20px] leading-[26px] font-medium tracking-[5px] uppercase;
+        }
+        & p {
+          @apply text-Black text-[16px] lg:text-[15px] leading-[26px] block max-w-[277px];
+        }
+        &:hover {
+          @apply bg-Peach;
+          & h3,
+          p {
+            @apply text-white;
+          }
+        }
+      }
+    }
   }
-  .home-projects a:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 110%;
-    transform: translateY(-50%);
-    width: 20px;
-    aspect-ratio: 1/1;
-    background: transparent url(./assets/shared/desktop/icon-right-arrow.svg)
-      no-repeat center center;
-  }
+
   .illustrations {
     @apply flex flex-col gap-8 md:flex-row lg:flex-col text-center md:text-start lg:text-center;
-  }
-  .illustrations figure {
-    min-width: 202px;
-    aspect-ratio: 1/1;
-    @apply relative mx-auto;
-  }
-  .illustrations figure img {
-    @apply absolute inset-0;
-  }
-  .illustrations h3 {
-    font-size: 20px;
-    letter-spacing: 5px;
-    line-height: 26px;
-    text-transform: uppercase;
+
+    & figure {
+      min-width: 202px;
+      aspect-ratio: 1/1;
+      @apply relative mx-auto;
+
+      & img {
+        @apply absolute inset-0;
+      }
+    }
+    & h3 {
+      font-size: 20px;
+      letter-spacing: 5px;
+      line-height: 26px;
+      text-transform: uppercase;
+    }
   }
   .get-in-touch {
     @apply bg-Peach rounded-lg p-12 md:py-20 lg:py-12 text-center lg:text-start md:text-balance relative flex flex-col justify-center items-center lg:flex-row lg:justify-between;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: transparent
+        url(./assets/shared/desktop/bg-pattern-call-to-action.svg) no-repeat
+        center center;
+    }
+    & h2 {
+      @apply font-medium text-[32px] lg:text-[40px] leading-[36px] lg:leading-[40px];
+    }
   }
-  .get-in-touch::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: transparent
-      url(./assets/shared/desktop/bg-pattern-call-to-action.svg) no-repeat
-      center center;
-  }
-  .get-in-touch h2 {
-    @apply font-medium text-[32px] lg:text-[40px] leading-[36px] lg:leading-[40px];
+  @media (min-width: 768px) {
+    .hero {
+      background-position: right -150px top -150px;
+    }
   }
 }
