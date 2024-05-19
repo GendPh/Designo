@@ -1,22 +1,68 @@
 <main>
   <section class="about-us-hero">
-    <img src="../../assets/about/mobile/image-about-hero.jpg" alt="Hero Image People Together">
-    <article class="about">
-      <h1 class="mb-6">about us</h1>
-      <p class="hero-description">Founded in 2010, we are a creative agency that produces lasting results for our
-        clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real
-        impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our
-        clients’ audiences.</p>
-    </article>
-    <img src="../../assets/about/mobile/image-world-class-talent.jpg" alt="">
-    <article class="talent">
-      <h2 class="mb-6">about us</h2>
-      <p class="hero-description">Founded in 2010, we are a creative agency that produces lasting results for our
-        clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real
-        impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our
-        clients’ audiences.</p>
-      <img src="../../assets/about/desktop/bg-pattern-hero-about-desktop.svg" alt="1 Bubble">
-      <img src="../../assets/about/mobile/bg-pattern-hero-about.svg" alt="2 Bubble">
-    </article>
+    <div class="info">
+      <img src="../../assets/about/mobile/image-about-hero.jpg" alt="Hero Image People Together" class="md:hidden">
+      <img src="../../assets/about/tablet/image-about-hero.jpg" alt="Hero Image People Together"
+        class="hidden md:block lg:hidden">
+      <img src="../../assets/about/tablet/image-about-hero.jpg" alt="Hero Image People Together"
+        class="hidden lg:block">
+      <article class="about">
+        <h1 class="mb-6">about us</h1>
+        <p class="hero-description">Founded in 2010, we are a creative agency that produces lasting results for our
+          clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make
+          real
+          impact. We’re always looking forward to creating brands, products, and digital experiences that connect with
+          our
+          clients’ audiences.</p>
+      </article>
+    </div>
+
+    <div class="info">
+      <img src="../../assets/about/mobile/image-world-class-talent.jpg" alt="Mobile Person" class="md:hidden">
+
+      <img src="../../assets/about/tablet/image-world-class-talent.jpg" alt="Mobile Person"
+        class="hidden md:block lg:hidden">
+
+      <img src="../../assets/about/mobile/image-world-class-talent.jpg" alt="Mobile Person"
+        class="hidden lg:block exeption">
+
+      <article class="talent">
+        <h2 class="mb-6">about us</h2>
+        <p class="hero-description">Founded in 2010, we are a creative agency that produces lasting results for our
+          clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make
+          real
+          impact. We’re always looking forward to creating brands, products, and digital experiences that connect with
+          our
+          clients’ audiences.</p>
+        <img src="../../assets/about/desktop/bg-pattern-hero-about-desktop.svg" alt="1 Bubble">
+        <img src="../../assets/about/mobile/bg-pattern-hero-about.svg" alt="2 Bubble">
+      </article>
+    </div>
+
+    <app-locations-destination class="my-[120px] md:my-0"></app-locations-destination>
+
+    <div class="info">
+      <img src="../../assets/about/mobile/image-real-deal.jpg" alt="Hand wall pictures" class="md:hidden">
+
+      <img src="../../assets/about/tablet/image-real-deal.jpg" alt="Hand wall pictures"
+        class="hidden md:block lg:hidden">
+
+      <img src="../../assets/about/mobile/image-real-deal.jpg" alt="Hand wall pictures" class="hidden lg:block">
+
+      <article class="talent exeption">
+        <h2 class="mb-6">The real deal</h2>
+        <p class="hero-description">As strategic partners in our clients’ businesses, we are ready to take on any
+          challenge as our own. Solving real problems require empathy and collaboration, and we strive to bring a fresh
+          perspective to every opportunity. We make design and technology more accessible and give you tools to measure
+          success.
+
+          We are visual storytellers in appealing and captivating ways. By combining business and marketing strategies,
+          we inspire audiences to take action and drive real results.</p>
+        <img src="../../assets/about/desktop/bg-pattern-hero-about-desktop.svg" alt="1 Bubble">
+        <img src="../../assets/about/mobile/bg-pattern-hero-about.svg" alt="2 Bubble">
+      </article>
+    </div>
   </section>
+
+  <app-get-in-touch></app-get-in-touch>
 </main>

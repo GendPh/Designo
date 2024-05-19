@@ -470,8 +470,6 @@ h1,
 }
 
 p.hero-description{
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
   font-size: 15px;
   line-height: 25px;
@@ -479,15 +477,16 @@ p.hero-description{
 
 @media (min-width: 768px){
   p.hero-description{
-    max-width: 55%;
     font-size: 16px;
     line-height: 26px;
   }
 }
 
-h3 {
-  font-size: 1.25rem;
-  line-height: 1.625rem;
+h3{
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 26px;
   letter-spacing: 5px;
 }
 
@@ -712,22 +711,35 @@ a.button {
   display: inline-block;
   cursor: pointer;
   border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 1rem;
   font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-a.button:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 173 155 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  &.dark{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+  &.dark{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+  }
+  &.light{
+    --tw-bg-opacity: 1;
+    background-color: rgb(231 129 107 / var(--tw-bg-opacity));
+  }
+  &.light{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+  &:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 173 155 / var(--tw-bg-opacity));
+  }
+  &:hover{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
 }
 
 .hero {
@@ -1307,66 +1319,230 @@ a.button:hover{
 }
 
 .about-us-hero{
+  display: grid;
   padding: 0px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .about-us-hero{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    gap: 120px;
+  }
+}
+
+@media (min-width: 1024px){
+  .about-us-hero{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.about-us-hero {
   & img{
     width: 100%;
   }
-  & article{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  @media (min-width: 768px){
+    & img{
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+    }
   }
-  & article{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  @media (min-width: 1024px){
+    & img{
+      max-width: 476px;
+    }
   }
-  & article {
-    &.about {
-      background-repeat: no-repeat;
-      background-position: right top -150px;
+  @media (min-width: 1024px){
+    & img{
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
     }
-    &.about{
-      --tw-bg-opacity: 1;
-      background-color: rgb(231 129 107 / var(--tw-bg-opacity));
+  }
+  @media (min-width: 1024px){
+    & img{
+      border-top-right-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
     }
-    &.about{
-      background-image: url(./assets/about/mobile/bg-pattern-hero-about.svg);
+  }
+  @media (min-width: 1024px){
+    & .exeption{
+      border-top-left-radius: 0.75rem;
+      border-bottom-left-radius: 0.75rem;
     }
-    &.talent{
-      position: relative;
+  }
+  @media (min-width: 1024px){
+    & .exeption{
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
-    &.talent{
-      overflow: hidden;
+  }
+  & .info{
+    display: flex;
+  }
+  & .info{
+    flex-direction: column;
+  }
+  @media (min-width: 1024px){
+    & .info{
+      flex-direction: row-reverse;
     }
-    &.talent{
-      --tw-bg-opacity: 1;
-      background-color: rgb(253 243 240 / var(--tw-bg-opacity));
-    }
-    &.talent {
-      & h2{
-        --tw-text-opacity: 1;
-        color: rgb(231 129 107 / var(--tw-text-opacity));
+  }
+  & .info {
+    @media (min-width: 1024px){
+      &:nth-of-type(2){
+        flex-direction: row;
       }
-      & p{
-        --tw-text-opacity: 1;
-        color: rgb(29 28 30 / var(--tw-text-opacity));
+    }
+    & article{
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    & article{
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    @media (min-width: 768px){
+      & article{
+        border-bottom-right-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
       }
-      & img {
-        position: absolute;
-        opacity: 40%;
+    }
+    @media (min-width: 1024px){
+      & article{
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+    }
+    @media (min-width: 1024px){
+      & article{
+        border-top-left-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+      }
+    }
+    & article {
+      &.about {
+        background-repeat: no-repeat;
+        background-position: right top -150px;
+      }
+      &.about{
+        --tw-bg-opacity: 1;
+        background-color: rgb(231 129 107 / var(--tw-bg-opacity));
+      }
+      &.about{
+        background-image: url(./assets/about/mobile/bg-pattern-hero-about.svg);
+      }
+      &.talent{
+        position: relative;
+      }
+      &.talent{
+        overflow: hidden;
+      }
+      &.talent{
+        --tw-bg-opacity: 1;
+        background-color: rgb(253 243 240 / var(--tw-bg-opacity));
+      }
+      &.talent {
+        @media (min-width: 1024px){
+          &:first-of-type{
+            border-top-right-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+          }
+        }
+        @media (min-width: 1024px){
+          &:first-of-type{
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+          }
+        }
         &:first-of-type {
-          top: 0;
-          left: 0;
-          width: 60%;
+          @media (min-width: 1024px){
+            &.exeption{
+              border-top-left-radius: 0.75rem;
+              border-bottom-left-radius: 0.75rem;
+            }
+          }
+          @media (min-width: 1024px){
+            &.exeption{
+              border-top-right-radius: 0px;
+              border-bottom-right-radius: 0px;
+            }
+          }
         }
-        &:last-of-type {
-          top: 90%;
-          scale: 1.6;
-          right: 0;
+        & h2{
+          --tw-text-opacity: 1;
+          color: rgb(231 129 107 / var(--tw-text-opacity));
+        }
+        & p{
+          --tw-text-opacity: 1;
+          color: rgb(29 28 30 / var(--tw-text-opacity));
+        }
+        & img {
+          position: absolute;
+          opacity: 40%;
+          &:first-of-type {
+            top: 0;
+            left: 0;
+            width: 60%;
+          }
+          &:last-of-type {
+            top: 90%;
+            scale: 1.6;
+            right: 0;
+          }
         }
       }
     }
+  }
+}
+
+.locations-destination{
+  display: grid;
+  gap: 3rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(29 28 30 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px){
+  .locations-destination{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.locations-destination {
+  & figure {
+    width: 202px;
+    aspect-ratio: 1/1
+  }
+  & figure{
+    position: relative;
+  }
+  & figure{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  & figure {
+    & img{
+      position: absolute;
+    }
+    & img{
+      inset: 0px;
+    }
+    & img{
+      height: 100%;
+    }
+    & img{
+      width: 100%;
+    }
+  }
+  & h3{
+    margin-bottom: 2rem;
+  }
+  & h3{
+    margin-top: 3rem;
   }
 }
 
@@ -1455,6 +1631,11 @@ a.button:hover{
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.my-\[120px\]{
+  margin-top: 120px;
+  margin-bottom: 120px;
 }
 
 .mb-6{
@@ -1685,6 +1866,11 @@ a.button:hover{
     margin-right: 1.5rem;
   }
 
+  .md\:my-0{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .md\:mb-\[350px\]{
     margin-bottom: 350px;
   }
@@ -1764,6 +1950,10 @@ a.button:hover{
 
   .lg\:block{
     display: block;
+  }
+
+  .lg\:hidden{
+    display: none;
   }
 
   .lg\:max-w-\[400px\]{

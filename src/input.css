@@ -14,12 +14,10 @@
     @apply text-center text-[32px] md:text-[40px] leading-[36px] md:leading-[48px] font-medium uppercase;
   }
   p.hero-description {
-    @apply text-center text-[15px] md:text-[16px] leading-[25px] md:leading-[26px] md:max-w-[55%] mx-auto;
+    @apply text-center text-[15px] md:text-[16px] leading-[25px] md:leading-[26px];
   }
   h3 {
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-    letter-spacing: 5px;
+    @apply text-[20px] leading-[26px] tracking-[5px] font-medium uppercase;
   }
 
   header,
@@ -86,7 +84,16 @@
   }
   a.button {
     letter-spacing: 1px;
-    @apply bg-white text-black p-4 rounded-lg font-medium inline-block hover:bg-Light-Peach hover:text-white transition-colors duration-150 cursor-pointer;
+    @apply p-4 rounded-lg font-medium inline-block transition-colors duration-150 cursor-pointer;
+    &.dark {
+      @apply bg-white text-black;
+    }
+    &.light {
+      @apply bg-Peach text-white;
+    }
+    &:hover {
+      @apply bg-Light-Peach text-white;
+    }
   }
 
   .hero {
@@ -221,40 +228,69 @@
   }
 
   .about-us-hero {
-    @apply p-0 text-white;
+    @apply p-0 text-white grid md:gap-[120px] md:mx-6 lg:mx-auto;
     & img {
-      @apply w-full;
+      @apply w-full lg:max-w-[476px] md:rounded-t-xl lg:rounded-l-none lg:rounded-r-xl;
     }
-    & article {
-      @apply py-20 px-6;
-      &.about {
-        background-repeat: no-repeat;
-        background-position: right top -150px;
-        @apply bg-Peach bg-[url(./assets/about/mobile/bg-pattern-hero-about.svg)];
+    & .exeption {
+      @apply lg:rounded-l-xl lg:rounded-r-none;
+    }
+    & .info {
+      @apply flex flex-col lg:flex-row-reverse;
+      &:nth-of-type(2) {
+        @apply lg:flex-row;
       }
-      &.talent {
-        @apply bg-[#FDF3F0] relative overflow-hidden;
-        & h2 {
-          @apply text-Peach;
+      & article {
+        @apply py-20 px-8 md:rounded-b-xl lg:rounded-r-none lg:rounded-l-xl;
+        &.about {
+          background-repeat: no-repeat;
+          background-position: right top -150px;
+          @apply bg-Peach bg-[url(./assets/about/mobile/bg-pattern-hero-about.svg)];
         }
-        & p {
-          @apply text-Black;
-        }
-        & img {
-          position: absolute;
-          opacity: 40%;
+        &.talent {
+          @apply bg-[#FDF3F0] relative overflow-hidden;
           &:first-of-type {
-            top: 0;
-            left: 0;
-            width: 60%;
+            @apply lg:rounded-r-xl lg:rounded-l-none;
+            &.exeption {
+              @apply lg:rounded-l-xl lg:rounded-r-none;
+            }
           }
-          &:last-of-type {
-            top: 90%;
-            scale: 1.6;
-            right: 0;
+          & h2 {
+            @apply text-Peach;
+          }
+          & p {
+            @apply text-Black;
+          }
+          & img {
+            position: absolute;
+            opacity: 40%;
+            &:first-of-type {
+              top: 0;
+              left: 0;
+              width: 60%;
+            }
+            &:last-of-type {
+              top: 90%;
+              scale: 1.6;
+              right: 0;
+            }
           }
         }
       }
+    }
+  }
+  .locations-destination {
+    @apply grid lg:grid-cols-3 gap-12 text-center text-Black;
+    & figure {
+      width: 202px;
+      aspect-ratio: 1/1;
+      @apply relative mx-auto;
+      & img {
+        @apply absolute inset-0 w-full h-full;
+      }
+    }
+    & h3 {
+      @apply mb-8 mt-12;
     }
   }
 }
