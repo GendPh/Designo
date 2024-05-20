@@ -1,5 +1,11 @@
 <main>
-  <section>
-    <h1>Test</h1>
+  <section class="map-container">
+
+    <app-locations-map *ngFor="let mapConfig of locations; let i = index;" [GetMapInf]="mapConfig"
+      GetMapContainer="map-{{i + 1}}"></app-locations-map>
+
   </section>
+
+
+  <app-get-in-touch></app-get-in-touch>
 </main>

@@ -293,4 +293,76 @@
       @apply mb-8 mt-12;
     }
   }
+
+  .map-container {
+    @apply px-0 md:px-6 lg:px-0 grid gap-10 md:gap-[120px] relative z-0;
+
+    .location-info {
+      @apply flex flex-col md:gap-8;
+      &:not(:has(#map-2)) {
+        @apply lg:flex-row;
+      }
+      &:has(#map-2) {
+        @apply lg:flex-row-reverse;
+      }
+    }
+  }
+  .map {
+    @apply h-80 md:rounded-xl lg:w-[320px] lg:aspect-square;
+  }
+  .content {
+    @apply bg-[#FDF3F0] py-20 px-10  text-center lg:text-start grid gap-6 relative overflow-hidden md:rounded-xl flex-grow;
+    & img {
+      @apply absolute w-[120%] md:bottom-0;
+    }
+    & h2 {
+      @apply text-Peach capitalize lg:text-start;
+    }
+    & div {
+      & p {
+        @apply text-[15px] leading-[25px];
+        &:first-child {
+          @apply font-bold;
+        }
+      }
+    }
+  }
+
+  .contact {
+    @apply mb-[120px] bg-Peach text-White;
+    & p {
+      @apply text-center mt-6;
+    }
+    .contact-form {
+      .input-field {
+        @apply relative;
+        .input {
+          @apply w-full bg-transparent border border-t-0 border-l-0 border-r-0 border-b-[#979797] p-3 outline-none;
+          &::placeholder {
+            @apply text-[#999999];
+          }
+          &:focus {
+            @apply border-White;
+            &::placeholder {
+              @apply text-White;
+            }
+          }
+        }
+        .error {
+          @apply absolute right-0 top-1/2 -translate-y-1/2 justify-center items-center gap-2 pointer-events-none;
+          &.hide {
+            @apply hidden;
+          }
+          &.show {
+            @apply flex;
+          }
+          .error-svg {
+            background: transparent url(./assets/contact/desktop/icon-error.svg)
+              no-repeat center center;
+            @apply w-6 aspect-square;
+          }
+        }
+      }
+    }
+  }
 }

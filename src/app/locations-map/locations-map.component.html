@@ -1,1 +1,23 @@
-<p>locations-map works!</p>
+<article class="location-info" [ngClass]="{'lg:flex-row-reverse':mapContainer=='map-2'}">
+  <div id="{{mapContainer}}" class="map"></div>
+
+  <div class="content">
+    <img src="../../assets/shared/desktop/bg-pattern-three-circles.svg" alt="Three Small Circle">
+
+    <h2>{{mapConfig.city}}</h2>
+
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div>
+        <p>Designo Central Office</p>
+        <p>{{mapConfig.street}}</p>
+        <p>{{mapConfig.address}}</p>
+      </div>
+
+      <div>
+        <p>Contact</p>
+        <p>P: {{mapConfig.phone}}</p>
+        <p>M: {{mapConfig.email}}</p>
+      </div>
+    </div>
+  </div>
+</article>

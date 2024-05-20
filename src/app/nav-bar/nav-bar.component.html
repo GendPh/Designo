@@ -11,7 +11,7 @@
     <ul class="uppercase flex justify-start gap-11 text-Black-Grey text-sm">
       <li><a routerLink="/about-us">our company</a></li>
       <li><a routerLink="/locations">locations</a></li>
-      <li><a href="#">contact</a></li>
+      <li><a routerLink="/contact">contact</a></li>
     </ul>
   </nav>
 
@@ -23,6 +23,6 @@
   <ul class="uppercase flex flex-col justify-start gap-8">
     <li><a (click)="CloseNavBar()" routerLink="/about-us">our company</a></li>
     <li><a (click)="CloseNavBar()" routerLink="/locations">locations</a></li>
-    <li><a (click)="CloseNavBar()" href="#">contact</a></li>
+    <li><a (click)="CloseNavBar()" routerLink="/contact">contact</a></li>
   </ul>
 </nav>
