@@ -84,7 +84,7 @@
   }
   a.button {
     letter-spacing: 1px;
-    @apply p-4 rounded-lg font-medium inline-block transition-colors duration-150 cursor-pointer;
+    @apply p-4 px-6 rounded-lg font-medium inline-block transition-colors duration-150 cursor-pointer;
     &.dark {
       @apply bg-white text-black;
     }
@@ -329,17 +329,26 @@
   }
 
   .contact {
-    @apply mb-[120px] bg-Peach text-White;
+    background-image: url(./assets/contact/mobile/bg-pattern-hero-contact-mobile.svg);
+    @apply md:px-[58px] md:py-9 lg:mx-auto mb-[120px] md:mx-6 bg-Peach text-White md:rounded-xl text-center md:text-start relative overflow-hidden md:bg-none grid lg:grid-cols-2;
+
+    & img {
+      @apply absolute bottom-[-300px] right-[-200px] md:top-[-190px] md:left-[-150px] z-0 rotate-90 opacity-50 md:opacity-100 md:rotate-0 md:w-[640px] pointer-events-none lg:bottom-0 lg:top-0 lg:left-0;
+    }
+    & h1 {
+      @apply text-center md:text-start;
+    }
     & p {
-      @apply text-center mt-6;
+      @apply mt-6 mb-[46px] text-[15px] leading-[25px] md:text-[16px] md:leading-[26px];
     }
     .contact-form {
+      @apply text-center md:text-end relative z-10;
       .input-field {
         @apply relative;
         .input {
-          @apply w-full bg-transparent border border-t-0 border-l-0 border-r-0 border-b-[#979797] p-3 outline-none;
+          @apply w-full bg-transparent border border-t-0 border-l-0 border-r-0 border-b-[rgba(255,255,255,0.5)] p-3 outline-none;
           &::placeholder {
-            @apply text-[#999999];
+            @apply text-[rgba(255,255,255,0.5)];
           }
           &:focus {
             @apply border-White;

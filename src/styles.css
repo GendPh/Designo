@@ -645,6 +645,40 @@ footer{
   --tw-contain-style:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
 #mobile-nav-bar {
   padding: 2.2rem 1.5rem;
   transform-origin: top;
@@ -712,6 +746,8 @@ a.button {
   cursor: pointer;
   border-radius: 0.5rem;
   padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   font-weight: 500;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1679,17 +1715,148 @@ a.button {
   }
 }
 
-.contact{
+.contact {
+  background-image: url(./assets/contact/mobile/bg-pattern-hero-contact-mobile.svg);
+  position: relative;
   margin-bottom: 120px;
+  display: grid;
+  overflow: hidden;
   --tw-bg-opacity: 1;
   background-color: rgb(231 129 107 / var(--tw-bg-opacity));
+  text-align: center;
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+@media (min-width: 768px){
+  .contact{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    border-radius: 0.75rem;
+    background-image: none;
+    padding-left: 58px;
+    padding-right: 58px;
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+    text-align: start;
+  }
+}
+
+@media (min-width: 1024px){
+  .contact{
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.contact {
+  & img{
+    pointer-events: none;
+  }
+  & img{
+    position: absolute;
+  }
+  & img{
+    bottom: -300px;
+  }
+  & img{
+    right: -200px;
+  }
+  & img{
+    z-index: 0;
+  }
+  & img{
+    --tw-rotate: 90deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+  & img{
+    opacity: 0.5;
+  }
+  @media (min-width: 768px){
+    & img{
+      top: -190px;
+    }
+  }
+  @media (min-width: 768px){
+    & img{
+      left: -150px;
+    }
+  }
+  @media (min-width: 768px){
+    & img{
+      width: 640px;
+    }
+  }
+  @media (min-width: 768px){
+    & img{
+      --tw-rotate: 0deg;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+  }
+  @media (min-width: 768px){
+    & img{
+      opacity: 1;
+    }
+  }
+  @media (min-width: 1024px){
+    & img{
+      bottom: 0px;
+    }
+  }
+  @media (min-width: 1024px){
+    & img{
+      top: 0px;
+    }
+  }
+  @media (min-width: 1024px){
+    & img{
+      left: 0px;
+    }
+  }
+  & h1{
+    text-align: center;
+  }
+  @media (min-width: 768px){
+    & h1{
+      text-align: start;
+    }
+  }
   & p{
     margin-top: 1.5rem;
   }
   & p{
+    margin-bottom: 46px;
+  }
+  & p{
+    font-size: 15px;
+  }
+  & p{
+    line-height: 25px;
+  }
+  @media (min-width: 768px){
+    & p{
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 768px){
+    & p{
+      line-height: 26px;
+    }
+  }
+  .contact-form{
+    position: relative;
+  }
+  .contact-form{
+    z-index: 10;
+  }
+  .contact-form{
     text-align: center;
+  }
+  @media (min-width: 768px){
+    .contact-form{
+      text-align: end;
+    }
   }
   .contact-form {
     .input-field{
@@ -1712,8 +1879,7 @@ a.button {
         border-right-width: 0px;
       }
       .input{
-        --tw-border-opacity: 1;
-        border-bottom-color: rgb(151 151 151 / var(--tw-border-opacity));
+        border-bottom-color: rgba(255,255,255,0.5);
       }
       .input{
         background-color: transparent;
@@ -1727,12 +1893,10 @@ a.button {
       }
       .input {
         &::-moz-placeholder{
-          --tw-text-opacity: 1;
-          color: rgb(153 153 153 / var(--tw-text-opacity));
+          color: rgba(255,255,255,0.5);
         }
         &::placeholder{
-          --tw-text-opacity: 1;
-          color: rgb(153 153 153 / var(--tw-text-opacity));
+          color: rgba(255,255,255,0.5);
         }
         &:focus{
           --tw-border-opacity: 1;
@@ -1802,6 +1966,10 @@ a.button {
 
 .pointer-events-auto{
   pointer-events: auto;
+}
+
+.visible{
+  visibility: visible;
 }
 
 .absolute{
@@ -1898,6 +2066,10 @@ a.button {
 
 .mb-\[250px\]{
   margin-bottom: 250px;
+}
+
+.mt-10{
+  margin-top: 2.5rem;
 }
 
 .mt-8{
@@ -2102,6 +2274,11 @@ a.button {
   opacity: 0.5;
 }
 
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -2235,6 +2412,10 @@ a.button {
     flex-direction: row-reverse;
   }
 
+  .lg\:justify-center{
+    justify-content: center;
+  }
+
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -2243,6 +2424,10 @@ a.button {
   .lg\:py-40{
     padding-top: 10rem;
     padding-bottom: 10rem;
+  }
+
+  .lg\:pr-16{
+    padding-right: 4rem;
   }
 
   .lg\:text-start{
