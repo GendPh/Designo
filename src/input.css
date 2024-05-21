@@ -20,13 +20,20 @@
     @apply text-[20px] leading-[26px] tracking-[5px] font-medium uppercase;
   }
 
+  .hero-section {
+    @apply bg-Peach text-center text-White overflow-hidden relative pb-20 md:mx-6 md:px-16 lg:mx-auto lg:py-40 lg:text-start md:rounded-xl;
+    & h1 {
+      @apply text-[26px] md:text-[40px] text-balance;
+    }
+  }
+
   header,
   footer {
-    @apply py-9 px-6 lg:py-16 lg:px-40;
+    @apply py-9 px-6 lg:py-16 ;
   }
   section {
-    /* @apply py-10 px-6 lg:pt-16 lg:px-44; */
-    @apply max-w-screen-lg px-6 lg:px-0 lg:mx-auto py-10 lg:pt-16;
+
+    @apply relative z-10 max-w-screen-lg px-6 lg:px-0 lg:mx-auto py-10 lg:pt-16;
   }
 
   footer {
@@ -346,19 +353,19 @@
       .input-field {
         @apply relative;
         .input {
-          @apply w-full bg-transparent border border-t-0 border-l-0 border-r-0 border-b-[rgba(255,255,255,0.5)] p-3 outline-none;
+          @apply w-full bg-transparent border border-t-0 border-l-0 border-r-0 border-b-[rgba(255,255,255,0.5)] p-3 outline-none relative z-0;
           &::placeholder {
             @apply text-[rgba(255,255,255,0.5)];
           }
           &:focus {
-            @apply border-White;
+            @apply border-White border-b-2;
             &::placeholder {
               @apply text-White;
             }
           }
         }
         .error {
-          @apply absolute right-0 top-1/2 -translate-y-1/2 justify-center items-center gap-2 pointer-events-none;
+          @apply absolute right-0 top-1/2 -translate-y-1/2 justify-center items-center gap-2 pointer-events-none z-10 bg-Peach pl-2;
           &.hide {
             @apply hidden;
           }

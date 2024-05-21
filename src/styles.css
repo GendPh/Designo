@@ -490,6 +490,51 @@ h3{
   letter-spacing: 5px;
 }
 
+.hero-section{
+  position: relative;
+  overflow: hidden;
+  --tw-bg-opacity: 1;
+  background-color: rgb(231 129 107 / var(--tw-bg-opacity));
+  padding-bottom: 5rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .hero-section{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    border-radius: 0.75rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .hero-section{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    text-align: start;
+  }
+}
+
+.hero-section {
+  & h1{
+    text-wrap: balance;
+  }
+  & h1{
+    font-size: 26px;
+  }
+  @media (min-width: 768px){
+    & h1{
+      font-size: 40px;
+    }
+  }
+}
+
 header,
   footer{
   padding-top: 2.25rem;
@@ -503,13 +548,12 @@ header,
   footer{
     padding-top: 4rem;
     padding-bottom: 4rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
   }
 }
 
-section {
-  /* @apply py-10 px-6 lg:pt-16 lg:px-44; */
+section{
+  position: relative;
+  z-index: 10;
   max-width: 1024px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -643,40 +687,6 @@ footer{
   --tw-contain-layout:  ;
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
-}
-
-.container{
-  width: 100%;
-}
-
-@media (min-width: 640px){
-  .container{
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px){
-  .container{
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px){
-  .container{
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px){
-  .container{
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px){
-  .container{
-    max-width: 1536px;
-  }
 }
 
 #mobile-nav-bar {
@@ -1864,6 +1874,12 @@ a.button {
     }
     .input-field {
       .input{
+        position: relative;
+      }
+      .input{
+        z-index: 0;
+      }
+      .input{
         width: 100%;
       }
       .input{
@@ -1899,6 +1915,9 @@ a.button {
           color: rgba(255,255,255,0.5);
         }
         &:focus{
+          border-bottom-width: 2px;
+        }
+        &:focus{
           --tw-border-opacity: 1;
           border-color: rgb(255 255 255 / var(--tw-border-opacity));
         }
@@ -1926,6 +1945,9 @@ a.button {
         top: 50%;
       }
       .error{
+        z-index: 10;
+      }
+      .error{
         --tw-translate-y: -50%;
         transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
       }
@@ -1937,6 +1959,13 @@ a.button {
       }
       .error{
         gap: 0.5rem;
+      }
+      .error{
+        --tw-bg-opacity: 1;
+        background-color: rgb(231 129 107 / var(--tw-bg-opacity));
+      }
+      .error{
+        padding-left: 0.5rem;
       }
       .error {
         &.hide{
@@ -1968,10 +1997,6 @@ a.button {
   pointer-events: auto;
 }
 
-.visible{
-  visibility: visible;
-}
-
 .absolute{
   position: absolute;
 }
@@ -1986,6 +2011,10 @@ a.button {
 
 .inset-0{
   inset: 0px;
+}
+
+.bottom-36{
+  bottom: 9rem;
 }
 
 .bottom-\[-220px\]{
@@ -2012,12 +2041,48 @@ a.button {
   top: 7rem;
 }
 
-.top-40{
-  top: 10rem;
-}
-
 .top-\[70\%\]{
   top: 70%;
+}
+
+.top-20{
+  top: 5rem;
+}
+
+.top-32{
+  top: 8rem;
+}
+
+.top-4{
+  top: 1rem;
+}
+
+.top-48{
+  top: 12rem;
+}
+
+.top-6{
+  top: 1.5rem;
+}
+
+.top-64{
+  top: 16rem;
+}
+
+.bottom-0{
+  bottom: 0px;
+}
+
+.bottom-\[\]{
+  bottom: ;
+}
+
+.bottom-\[-\]{
+  bottom: -;
+}
+
+.bottom-\[-200px\]{
+  bottom: -200px;
 }
 
 .z-0{
@@ -2064,8 +2129,8 @@ a.button {
   margin-bottom: 2rem;
 }
 
-.mb-\[250px\]{
-  margin-bottom: 250px;
+.mb-\[220px\]{
+  margin-bottom: 220px;
 }
 
 .mt-10{
@@ -2096,12 +2161,16 @@ a.button {
   height: 1px;
 }
 
+.h-\[594px\]{
+  height: 594px;
+}
+
 .w-52{
   width: 13rem;
 }
 
-.w-\[70\%\]{
-  width: 70%;
+.w-\[1006px\]{
+  width: 1006px;
 }
 
 .w-full{
@@ -2199,23 +2268,9 @@ a.button {
   overflow: hidden;
 }
 
-.text-balance{
-  text-wrap: balance;
-}
-
-.border-red-200{
-  --tw-border-opacity: 1;
-  border-color: rgb(254 202 202 / var(--tw-border-opacity));
-}
-
 .bg-Black{
   --tw-bg-opacity: 1;
   background-color: rgb(29 28 30 / var(--tw-bg-opacity));
-}
-
-.bg-Peach{
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 129 107 / var(--tw-bg-opacity));
 }
 
 .bg-White{
@@ -2225,10 +2280,6 @@ a.button {
 
 .pb-0{
   padding-bottom: 0px;
-}
-
-.pb-20{
-  padding-bottom: 5rem;
 }
 
 .pb-\[120px\]{
@@ -2296,11 +2347,6 @@ a.button {
     left: 13rem;
   }
 
-  .md\:mx-6{
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-
   .md\:my-0{
     margin-top: 0px;
     margin-bottom: 0px;
@@ -2337,15 +2383,6 @@ a.button {
   .md\:justify-between{
     justify-content: space-between;
   }
-
-  .md\:rounded-xl{
-    border-radius: 0.75rem;
-  }
-
-  .md\:px-16{
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
 }
 
 @media (min-width: 1024px){
@@ -2372,11 +2409,6 @@ a.button {
   .lg\:mx-0{
     margin-left: 0px;
     margin-right: 0px;
-  }
-
-  .lg\:mx-auto{
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .lg\:mb-0{
@@ -2421,16 +2453,7 @@ a.button {
     padding-right: 0px;
   }
 
-  .lg\:py-40{
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-  }
-
   .lg\:pr-16{
     padding-right: 4rem;
-  }
-
-  .lg\:text-start{
-    text-align: start;
   }
 }

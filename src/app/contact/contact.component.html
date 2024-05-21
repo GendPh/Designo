@@ -1,4 +1,9 @@
-<main class="pb-[120px]">
+<main class="pb-[120px] relative">
+
+  <img src="../../assets/shared/desktop/bg-pattern-leaf.svg" alt="Leaf Background"
+    class="hidden lg:block absolute right-0 bottom-[-200px] z-0 w-[1006px] h-[594px]">
+
+
   <section class="contact">
     <img src="../../assets/contact/desktop/bg-pattern-hero-desktop.svg" alt="1 bubble">
     <div class="flex flex-col lg:justify-center lg:pr-16">
@@ -10,20 +15,23 @@
 
     <form class="contact-form" (submit)="OnSubmit($event)">
       <div class="input-field">
-        <input class="input" (blur)="OnBlur($event)" id="nameInputEl" type="text" placeholder="Name"
-          [(ngModel)]="nameInput">
+        <input [value]="nameInput" (input)="SetName($event)" class="input" (blur)="OnBlur($event)" id="nameInputEl"
+          type="text" placeholder="Name">
         <span class="error hide">Can´t be Empty <span class="error-svg"></span></span>
       </div>
       <div class="input-field">
-        <input class="input" (blur)="OnBlur($event)" id="emailInputEl" type="email" placeholder="Email Address">
+        <input [value]="emailInput" (input)="SetEmail($event)" class="input" (blur)="OnBlur($event)" id="emailInputEl"
+          type="email" placeholder="Email Address">
+        <span class="error hide">{{emailErrorMessage}} <span class="error-svg"></span></span>
+      </div>
+      <div class="input-field">
+        <input [value]="phoneInput" (input)="SetPhone($event)" class="input" (blur)="OnBlur($event)" id="phoneInputEl"
+          type="text" placeholder="Phone">
         <span class="error hide">Can´t be Empty <span class="error-svg"></span></span>
       </div>
       <div class="input-field">
-        <input class="input" (blur)="OnBlur($event)" id="phoneInputEl" type="text" placeholder="Phone">
-        <span class="error hide">Can´t be Empty <span class="error-svg"></span></span>
-      </div>
-      <div class="input-field">
-        <textarea placeholder="Your Message" class="input" (blur)="OnBlur($event)" id="messageInputEl"></textarea>
+        <textarea [value]="messageInput" rows="5" (input)="SetMessage($event)" placeholder="Your Message" class="input"
+          (blur)="OnBlur($event)" id="messageInputEl"></textarea>
         <span class="error hide">Can´t be Empty <span class="error-svg"></span></span>
       </div>
       <button type="submit"><a class="button dark mt-10">Submit</a></button>
