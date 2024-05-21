@@ -30,14 +30,21 @@ export class LocationsMapComponent implements OnInit {
   }
 
   initMap(L: any): void {
-    if (this.mapConfig && this.mapConfig.coordinates) {
-      this.map = L.map(this.mapContainer, { zoomControl: false }).setView(this.mapConfig.coordinates, 15);
+    try {
+      if (this.mapConfig && this.mapConfig.coordinates) {
+        console.log('Initializing map with coordinates:', this.mapConfig.coordinates);
+        this.map = L.map(this.mapContainer, { zoomControl: false }).setView(this.mapConfig.coordinates, 15);
 
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(this.map);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(this.map);
 
-      L.marker(this.mapConfig.coordinates).addTo(this.map);
+        L.marker(this.mapConfig.coordinates).addTo(this.map);
+      } else {
+        console.error('Map configuration or coordinates are missing:', this.mapConfig);
+      }
+    } catch (error) {
+      console.error('Error initializing map:', error);
     }
   }
 }
