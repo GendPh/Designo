@@ -21,6 +21,7 @@ export class LocationsMapComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     if (isPlatformBrowser(this.platformId)) {
       const L = await import('leaflet');
+      /* await import('leaflet/dist/leaflet.css'); */
       this.initMap(L);
     }
   }
