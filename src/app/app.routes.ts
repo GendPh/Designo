@@ -14,6 +14,6 @@ export const routes: Routes = [
   { path: 'graphic-design', title: 'Graphic Design', component: GraphicDesignComponent, },
   { path: 'about-us', title: 'About Us', component: AboutUsComponent, },
   { path: 'locations', title: 'Locations', component: LocationsComponent, },
-  { path: 'contact', title: 'Contact', component: ContactComponent, }
-  /* { path: '**', redirectTo: '/404' } */
+  { path: 'contact', title: 'Contact', component: ContactComponent, },
+  { path: '**', redirectTo: '' }
 ];
