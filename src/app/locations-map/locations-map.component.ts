@@ -5,7 +5,7 @@ import { Location } from '../../Model/location.model';
 @Component({
   selector: 'app-locations-map',
   standalone: true,
-  imports: [CommonModule,],
+  imports: [CommonModule],
   templateUrl: './locations-map.component.html',
   styleUrls: ['./locations-map.component.css']
 })
@@ -26,12 +26,14 @@ export class LocationsMapComponent implements OnInit {
   }
 
   initMap(L: any): void {
-    this.map = L.map(this.mapContainer, { zoomControl: false }).setView(this.mapConfig.coordinates, 15);
+    if (this.mapConfig && this.mapConfig.coordinates) {
+      this.map = L.map(this.mapContainer, { zoomControl: false }).setView(this.mapConfig.coordinates, 15);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(this.map);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(this.map);
 
-    L.marker(this.mapConfig.coordinates).addTo(this.map);
+      L.marker(this.mapConfig.coordinates).addTo(this.map);
+    }
   }
 }
