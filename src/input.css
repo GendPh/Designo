@@ -29,10 +29,9 @@
 
   header,
   footer {
-    @apply py-9 px-6 lg:py-16 ;
+    @apply py-9 px-6 lg:py-16;
   }
   section {
-
     @apply relative z-10 max-w-screen-lg px-6 lg:px-0 lg:mx-auto py-10 lg:pt-16;
   }
 

@@ -2017,6 +2017,10 @@ a.button {
   bottom: 9rem;
 }
 
+.bottom-\[-200px\]{
+  bottom: -200px;
+}
+
 .bottom-\[-220px\]{
   bottom: -220px;
 }
@@ -2037,52 +2041,20 @@ a.button {
   top: 0px;
 }
 
-.top-28{
-  top: 7rem;
-}
-
-.top-\[70\%\]{
-  top: 70%;
-}
-
 .top-20{
   top: 5rem;
 }
 
-.top-32{
-  top: 8rem;
-}
-
-.top-4{
-  top: 1rem;
-}
-
-.top-48{
-  top: 12rem;
-}
-
-.top-6{
-  top: 1.5rem;
+.top-28{
+  top: 7rem;
 }
 
 .top-64{
   top: 16rem;
 }
 
-.bottom-0{
-  bottom: 0px;
-}
-
-.bottom-\[\]{
-  bottom: ;
-}
-
-.bottom-\[-\]{
-  bottom: -;
-}
-
-.bottom-\[-200px\]{
-  bottom: -200px;
+.top-\[70\%\]{
+  top: 70%;
 }
 
 .z-0{
@@ -2290,6 +2262,10 @@ a.button {
   text-align: center;
 }
 
+.text-start{
+  text-align: start;
+}
+
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -2455,5 +2431,9 @@ a.button {
 
   .lg\:pr-16{
     padding-right: 4rem;
+  }
+
+  .lg\:text-start{
+    text-align: start;
   }
 }
